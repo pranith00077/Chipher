@@ -373,4 +373,4 @@ function base64ToArrayBuffer(
   }
 
   return bytes.buffer;
-}
+}   
