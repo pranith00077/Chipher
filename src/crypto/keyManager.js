@@ -1,22 +1,3 @@
-// ============================================================
-// CHIPER - KEY MANAGER
-// ============================================================
-//
-// Responsible for:
-// 1. Generating RSA-OAEP public/private key pairs
-// 2. Exporting public/private keys
-// 3. Importing a recipient's public key
-// 4. Storing keys locally in the browser
-//
-// IMPORTANT:
-// - Public key can be shared.
-// - Private key must remain secret.
-// ============================================================
-
-
-// ============================================================
-// 1. GENERATE RSA-OAEP KEY PAIR
-// ============================================================
 
 export async function generateKeyPair() {
 
