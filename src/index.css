@@ -412,33 +412,9 @@ button {
 }
 
 
-/* MOBILE */
+/* KEY OUTPUT (base styles, shared across breakpoints) */
 
-@media (max-width: 850px) {
-
-  .hero {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    padding: 60px 25px;
-  }
-
-  .security-card {
-    width: 100%;
-
-    min-width: 0;
-  }
-
-  .buttons {
-    flex-direction: column;
-  }
-
-  .page {
-    padding: 50px 20px;
-  }
-
-  .key-output {
+.key-output {
   margin-top: 30px;
 }
 
@@ -478,4 +454,216 @@ button {
   font-size: 12px;
 }
 
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   Mobile   : up to 480px
+   Tablet   : 481px – 850px
+   Laptop   : 851px – 1200px
+   Desktop  : 1201px and up (default styles above)
+   ========================================================= */
+
+
+/* -------- LAPTOP / SMALL DESKTOP (<= 1200px) -------- */
+@media (max-width: 1200px) {
+
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .hero {
+    padding: 6% 5%;
+    gap: 50px;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .security-card {
+    width: 320px;
+    min-width: 320px;
+    padding: 30px;
+  }
+
+  .page {
+    max-width: 900px;
+  }
+}
+
+
+/* -------- TABLET (<= 850px) -------- */
+@media (max-width: 850px) {
+
+  .navbar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 15px 5%;
+    gap: 12px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .nav-links button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .hero {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 60px 25px;
+
+    gap: 45px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-content > p {
+    max-width: 100%;
+  }
+
+  .security-card {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .page {
+    padding: 50px 20px;
+  }
+
+  .page h1 {
+    font-size: 42px;
+  }
+
+  .card {
+    max-width: 100%;
+    padding: 28px;
+  }
+}
+
+
+/* -------- MOBILE (<= 480px) -------- */
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 12px 5%;
+  }
+
+  .logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+
+  .nav-links button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 40px 18px;
+    gap: 35px;
+  }
+
+  .tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(36px, 10vw, 48px);
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+  }
+
+  .hero-content > p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .buttons {
+    margin-top: 25px;
+    gap: 10px;
+  }
+
+  .primary,
+  .secondary {
+    padding: 13px 18px;
+    font-size: 13px;
+  }
+
+  .security-card {
+    padding: 22px;
+    border-radius: 12px;
+  }
+
+  .lock {
+    font-size: 38px;
+    margin-bottom: 18px;
+  }
+
+  .flow {
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+
+  .page {
+    padding: 35px 16px;
+  }
+
+  .page h1 {
+    font-size: 30px;
+  }
+
+  .page > p {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .card textarea {
+    min-height: 100px;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .key-icon {
+    font-size: 34px;
+  }
+
+  .result {
+    padding: 18px;
+  }
+
+  .key-output textarea {
+    font-size: 11px;
+    min-height: 100px;
+  }
 }
