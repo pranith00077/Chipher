@@ -445,86 +445,59 @@ function App() {
       // DOWNLOAD CHIPER IMAGE
       // ======================================================
 
-      console.log(
-        "STEP 5: Downloading CHiPER image..."
-      );
+      // ======================================================
+// STEP 5
+// SAVE CHIPER IMAGE
+// ======================================================
 
+console.log(
+  "STEP 5: Saving CHiPER image..."
+);
 
-      const downloadURL =
-        URL.createObjectURL(
-          chiperImage
-        );
+const downloadURL =
+  URL.createObjectURL(chiperImage);
 
+const link =
+  document.createElement("a");
 
-      const link =
-        document.createElement("a");
+link.href =
+  downloadURL;
 
+link.download =
+  "chiper-image.png";
 
-      link.href =
-        downloadURL;
+link.style.display =
+  "none";
 
+document.body.appendChild(
+  link
+);
 
-      link.download =
-        "chiper-image.png";
+link.click();
 
+document.body.removeChild(
+  link
+);
 
-      document.body.appendChild(
-        link
-      );
+// Do NOT revoke immediately.
+// Give Android/WebView enough time to process the download.
 
+setTimeout(() => {
 
-      link.click();
+  URL.revokeObjectURL(
+    downloadURL
+  );
 
+}, 5000);
 
-      document.body.removeChild(
-        link
-      );
+console.log(
+  "STEP 5 COMPLETE"
+);
 
-
-      setTimeout(() => {
-
-        URL.revokeObjectURL(
-          downloadURL
-        );
-
-      }, 1000);
-
-
-      console.log(
-        "STEP 5 COMPLETE"
-      );
-
-
-      alert(
-        "✅ Message encrypted and hidden inside the image!"
-      );
-
-    }
-
-    catch (error) {
-
-      console.error(
-        "================================================"
-      );
-
-      console.error(
-        "CHIPER SEND ERROR"
-      );
-
-      console.error(
-        error
-      );
-
-      console.error(
-        "================================================"
-      );
-
-
-      alert(
-        "❌ Operation failed.\n\n" +
-        error.message
-      );
-
+alert(
+  "✅ CHiPER image created successfully!\n\n" +
+  "The image has been saved as chiper-image.png."
+);
     }
 
     finally {
